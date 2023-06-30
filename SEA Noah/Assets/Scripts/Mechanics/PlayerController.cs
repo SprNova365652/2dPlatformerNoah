@@ -5,6 +5,7 @@ using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
 using Platformer.Core;
+using UnityEngine.UI;
 
 namespace Platformer.Mechanics
 {
@@ -50,6 +51,8 @@ namespace Platformer.Mechanics
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+
+        public Text WinText;
 
         public Bounds Bounds => collider2d.bounds;
 
@@ -159,6 +162,11 @@ namespace Platformer.Mechanics
                 Debug.Log("Axis Y:" + respawnPoint.y);
                
                 //currentCheckpoint.SetCheckpoint(respawnPoint);
+            }
+
+            if (collision.tag == "Win")
+            {
+                WinText.gameObject.SetActive(true);
             }
         }
     }
