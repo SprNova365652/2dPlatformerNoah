@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: TileFloatingTileMiddle
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: d9cff7e11cbfa4b07a36c8b319414af3, type: 3}
-  m_Color: {r: 1, g: 0.94509804, b: 0.7411765, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4b59a07770b3607408af06862bbf6de6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0
