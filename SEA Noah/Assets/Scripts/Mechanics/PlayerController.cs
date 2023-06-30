@@ -18,6 +18,17 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
+        public Vector3 respawnPoint;
+
+        // public static PlayerController instance;
+        // public CheckpointController currentCheckpoint;
+
+        void Start()
+        {
+            // instance = this;
+            respawnPoint = transform.position;
+        }
+
         /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
@@ -49,6 +60,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+          
         }
 
         protected override void Update()
@@ -136,6 +148,18 @@ namespace Platformer.Mechanics
             Jumping,
             InFlight,
             Landed
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.tag == "Checkpoint")
+            {
+                Debug.Log("Respawn point");
+                respawnPoint = transform.position;
+                Debug.Log("Axis X:"+respawnPoint.x);
+                Debug.Log("Axis Y:" + respawnPoint.y);
+               
+                //currentCheckpoint.SetCheckpoint(respawnPoint);
+            }
         }
     }
 }
